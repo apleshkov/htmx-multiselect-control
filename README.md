@@ -4,6 +4,8 @@ A proof-of-concept for multiselect form control using (https://htmx.org)[htmx] a
 
 The data is taken from (https://randomuser.me)[Random User Generator] and stored locally for the sake of demonstration (consistent user names).
 
+![Demo](https://github.com/apleshkov/htmx-multiselect-control/blob/main/demo.gif)
+
 ## Features
 
 * Multiselect
