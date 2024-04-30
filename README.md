@@ -1,8 +1,8 @@
 # Multiselect Form Control with htmx
 
-A proof-of-concept for multiselect form control using (https://htmx.org)[htmx] and (https://getbootstrap.com)[bootstrap]. No single line of JS. The back-end is written in (https://go.dev)[Go].
+A proof-of-concept for multiselect form control using [htmx](https://htmx.org) and [bootstrap](https://getbootstrap.com). No single line of JS. The back-end is written in [Go](https://go.dev).
 
-The data is taken from (https://randomuser.me)[Random User Generator] and stored locally for the sake of demonstration (consistent user names).
+The data is taken from [Random User Generator](https://randomuser.me) and stored locally for the sake of demonstration (consistent user names).
 
 ![Demo](https://github.com/apleshkov/htmx-multiselect-control/blob/main/demo.gif)
 
