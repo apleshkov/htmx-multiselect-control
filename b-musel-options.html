@@ -1,0 +1,11 @@
+{{if .SearchQuery}}
+<div class="dropdown-menu show">
+    {{range .List}}
+    <a href="#" hx-post="{{$.SelectURL}}" hx-target="#{{$.ControlName}}" hx-swap="outerHTML"
+        hx-include="[name='{{$.ControlName}}']" hx-vals='{ "action": "select", "key": "{{.Key}}" }'
+        class="dropdown-item">{{.Title}}</a>
+    {{else}}
+    {{if .EmptyText}}<div class="p-2">{{.EmptyText}}</div>{{end}}
+    {{end}}
+</div>
+{{end}}

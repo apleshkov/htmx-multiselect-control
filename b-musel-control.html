@@ -1,0 +1,18 @@
+<div id="{{.Name}}" class="musel w-50">
+    <input type="hidden" name="{{.Name}}" value="{{.StringValue}}" />
+    {{range .SelectedKeys}}
+    <button type="button" class="mb-1 btn btn-dark" hx-post="{{$.UpdateURL}}" hx-target="#{{$.Name}}"
+        hx-swap="outerHTML" hx-include="[name='{{$.Name}}']" hx-vals='{ "action": "remove", "key": "{{.}}" }'>{{.}} <i
+            class="bi bi-trash"></i></button>
+    {{end}}
+    <input type="text" name="{{.Name}}-query" class="mt-2 form-control" autocomplete="off"
+        hx-include="[name='{{.Name}}']" hx-post="{{.SearchURL}}" hx-target="#{{.Name}} .dropdown"
+        hx-trigger="input changed delay:500ms, search" hx-indicator="#{{.Name}} .htmx-indicator"
+        placeholder="{{.Placeholder}}" />
+    <div class="dropdown"></div>
+    <div class="htmx-indicator dropdown">
+        <div class="dropdown-menu show p-1">
+            <div class="spinner-border"></div>
+        </div>
+    </div>
+</div>
