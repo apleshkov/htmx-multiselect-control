@@ -13,7 +13,7 @@ type Control struct {
 	SelectedKeys []string
 }
 
-func (c Control) StringValue() string {
+func (c *Control) StringValue() string {
 	return strings.Join(c.SelectedKeys, ",")
 }
 
