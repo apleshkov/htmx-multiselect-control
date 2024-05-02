@@ -3,13 +3,13 @@ package main
 import (
 	"encoding/json"
 	"fmt"
+	"html/template"
 	"htmxtest/musel"
 	"io"
 	"log"
 	"net/http"
 	"os"
 	"strings"
-	"text/template"
 	"time"
 )
 
@@ -43,7 +43,7 @@ func readUserData(filename string) (*randomUserData, error) {
 type indexPageData struct {
 	Submit        bool
 	SelectedUsers string
-	UsersControl  string
+	UsersControl  template.HTML
 }
 
 func newUsersControl(keys []string) *musel.Control {
@@ -76,7 +76,7 @@ func main() {
 			)
 			buf := new(strings.Builder)
 			renderTemplate(buf, "./b-musel-control.html", uc)
-			pageData.UsersControl = buf.String()
+			pageData.UsersControl = template.HTML(buf.String())
 			renderTemplate(wr, "./index.html", pageData)
 		} else if strings.HasPrefix(path, "/user-search") {
 			req.ParseForm()
